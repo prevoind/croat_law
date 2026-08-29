@@ -1,0 +1,7 @@
+# Croatian Criminal Law KB — runtime dependencies
+# Python 3.11+ (built and tested on 3.13)
+fastembed==0.8.0          # local ONNX embeddings (intfloat/multilingual-e5-large)
+numpy==2.5.2
+beautifulsoup4==4.15.0    # HTML parsing in parse.py
+# fastembed pulls onnxruntime, tokenizers, and huggingface_hub transitively.
+# scrape.py uses stdlib urllib only; ask.py --llm uses stdlib urllib (DeepSeek).

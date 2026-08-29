@@ -1,0 +1,26 @@
+name: croatian-criminal-law-agent
+version: 1.0.0
+description: >-
+  Croatian criminal-law research agent: the KZ (398) + ZKP (597) statutory
+  knowledge base, the zakon.hr scraping pipeline that built it, and the
+  agent-authored skills for citation-grounded Q&A on detention, appeals,
+  evidence and procedure.
+hermes_requires: ">=0.20.0"
+author: regan
+license: MIT
+
+# Only the skills install into the profile. The `kb/` directory ships in this
+# repo but is a data project you place at ~/hr-criminal-law-kb/ yourself (see
+# README) so the skills' internal path references resolve.
+distribution_owned:
+  - skills
+
+env_requires:
+  - name: DEEPSEEK_API_KEY
+    description: "DeepSeek API key for kb/ask.py --llm answers (optional; local retrieval works without it)"
+    required: false
+    default: ""
+  - name: DEEPSEEK_MODEL
+    description: "DeepSeek model name override (defaults to deepseek-chat)"
+    required: false
+    default: ""
